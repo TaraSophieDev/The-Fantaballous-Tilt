@@ -1,4 +1,4 @@
-/[Ll]ibrary/
+[Ll]ibrary/
 [Tt]emp/
 [Tt]mp/
 [Oo]bj/
@@ -9,6 +9,7 @@ Assets/AssetStoreTools*
 [Ss]taginArea/
 [Tt]o[Bb]lender/
 /RewiredBackup*
+/[Ll]ogs/
 
 # Visual Studio cache directory
 .vs/

@@ -12,6 +12,25 @@ public class PlatformController : MonoBehaviour
   private float x_rotation, z_rotation, l_trigger, r_trigger;
   //private bool ballIsParented;
 
+  void ClampRotation(float angle, float minAngle, float maxAngle, float clampAroundAngle = 0) {
+    clampAroundAngle += 180;
+    angle -= clampAroundAngle;
+
+    angle = WrapAngle(angle);
+    angle -= 180;
+    angle = Mathf.Clamp(angle, minAngle, maxAngle);
+
+    angle += 180;
+    
+    transform.rotation = Quaternion.Euler(angle, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + clampAroundAngle);
+  }
+
+  float WrapAngle(float angle) {
+    while (angle < 0)
+      angle += 360;
+
+      return Mathf.Repeat(angle, 360);
+  }
 
   public void HandleInput() {
     x_rotation = z_rotation = l_trigger = r_trigger = 0.0f;
@@ -51,6 +70,8 @@ public class PlatformController : MonoBehaviour
 
   void Update() {
     HandleInput();
+    //ClampRotation(transform.eulerAngles.x, -20, 20);
+    //ClampRotation(transform.eulerAngles.z, -20, 20);
     // ball_go.transform.localScale = Vector3.one;
 
     if (x_rotation > 0){
