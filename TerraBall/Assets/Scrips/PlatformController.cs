@@ -10,7 +10,7 @@ public class PlatformController : MonoBehaviour
   public float rotation_speed = 5f;
 
   private float x_rotation, z_rotation, l_trigger, r_trigger;
-  private bool ballIsParented;
+  //private bool ballIsParented;
 
 
   public void HandleInput() {

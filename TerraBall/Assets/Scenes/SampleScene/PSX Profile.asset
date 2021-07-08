@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Value: 0
   bloom:
     m_OverrideState: 0
-    m_Value: 0.0625
+    m_Value: 0.032
     min: 0
     max: 1
   grateMaskMode:
@@ -33,7 +33,7 @@ MonoBehaviour:
     m_Value: 1
   scanlineSharpness:
     m_OverrideState: 0
-    m_Value: 0.5
+    m_Value: 0
     min: 0
     max: 1
   imageSharpness:
@@ -86,6 +86,39 @@ MonoBehaviour:
     m_Value: 0.5
     min: 0
     max: 1
+--- !u!114 &-6138956543134155949
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d61509376d05fc438d9ed9281e44e26, type: 3}
+  m_Name: CompressionVolume
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  isEnabled:
+    m_OverrideState: 0
+    m_Value: 0
+  weight:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  accuracy:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 1
+  mode:
+    m_OverrideState: 0
+    m_Value: 0
+  colorspace:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &-5863598003179307277
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -101,8 +134,8 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   isEnabled:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   contrast:
     m_OverrideState: 0
     m_Value: 0.5
@@ -260,13 +293,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   components:
   - {fileID: -3792720743058523575}
+  - {fileID: 812797736351750484}
   - {fileID: 4625138653647242585}
   - {fileID: 6734286989554608247}
   - {fileID: -7306646570291009635}
   - {fileID: 906039860067577366}
   - {fileID: -5348637206390784081}
-  - {fileID: 812797736351750484}
   - {fileID: -5863598003179307277}
+  - {fileID: -6138956543134155949}
 --- !u!114 &812797736351750484
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -283,7 +317,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   skyMode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 3
   framebufferDitherWeight:
     m_OverrideState: 0
     m_Value: 1
@@ -293,10 +327,10 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {x: 0, y: 0, z: 0}
   textureFilterMode:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   skyboxTexture:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {fileID: 0}
   tiledLayersSkyHeightScale:
     m_OverrideState: 0
@@ -308,17 +342,17 @@ MonoBehaviour:
     min: -1
     max: 1
   tiledLayersSkyColorLayer0:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.31702027, g: 0.7924528, b: 0.12335351, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   tiledLayersSkyTextureLayer0:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 2aa0d696acaa0a1489c389021f979b8f, type: 3}
   tiledLayersSkyTextureScaleOffsetLayer0:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 0, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 3.2, y: 1, z: 0, w: 0}
   tiledLayersSkyRotationLayer0:
     m_OverrideState: 0
     m_Value: 0
@@ -329,17 +363,17 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   tiledLayersSkyColorLayer1:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.42212528, g: 0.5849056, b: 0.568015, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   tiledLayersSkyTextureLayer1:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 2aa0d696acaa0a1489c389021f979b8f, type: 3}
   tiledLayersSkyTextureScaleOffsetLayer1:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 0, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 4.59, y: 1, z: 0, w: 0}
   tiledLayersSkyRotationLayer1:
     m_OverrideState: 0
     m_Value: 0
