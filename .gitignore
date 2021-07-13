@@ -9,7 +9,7 @@ Assets/AssetStoreTools*
 [Ss]taginArea/
 [Tt]o[Bb]lender/
 /RewiredBackup*
-/[Ll]ogs/
+[Ll]ogs/
 
 # Visual Studio cache directory
 .vs/
