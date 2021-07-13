@@ -7,10 +7,15 @@ public class PlatformController : MonoBehaviour
 {
   public GameObject ball_go;
   public Rigidbody ball_rb;
+
+  private Rigidbody rb;
   public float rotation_speed = 5f;
 
   private float x_rotation, z_rotation, l_trigger, r_trigger;
   //private bool ballIsParented;
+
+  float xAxis, zAxis, yAxis;
+
 
   void ClampRotation(float angle, float minAngle, float maxAngle, float clampAroundAngle = 0) {
     clampAroundAngle += 180;
@@ -65,7 +70,8 @@ public class PlatformController : MonoBehaviour
 
   void Start() {
     //platform = transform.GetChild(0);
-    rotation_speed *= Time.deltaTime;
+    //rotation_speed *= Time.deltaTime;
+    rb = GetComponent<Rigidbody>();
   }
 
   void Update() {
@@ -77,11 +83,13 @@ public class PlatformController : MonoBehaviour
     if (x_rotation > 0){
       ball_go.transform.parent = transform;
       ball_rb.WakeUp();
-      transform.Rotate(rotation_speed, 0, 0, Space.World);
+      xAxis += rotation_speed * Time.deltaTime;
+      //transform.Rotate(rotation_speed, 0, 0, Space.World);
     } else if (x_rotation < 0) {
       ball_go.transform.parent = transform;
       ball_rb.WakeUp();
-      transform.Rotate(-rotation_speed, 0, 0, Space.World);
+      xAxis -= rotation_speed * Time.deltaTime;
+      //transform.Rotate(-rotation_speed, 0, 0, Space.World);
     } else {
       ball_go.transform.parent = null;
     }
@@ -89,11 +97,13 @@ public class PlatformController : MonoBehaviour
     if (z_rotation > 0) {
       ball_go.transform.parent = transform;
       ball_rb.WakeUp();
-      transform.Rotate(0, 0, rotation_speed, Space.World);
+      zAxis += rotation_speed * Time.deltaTime;
+      //transform.Rotate(0, 0, rotation_speed, Space.World);
     } else if (z_rotation < 0) {
       ball_go.transform.parent = transform;
       ball_rb.WakeUp();
-      transform.Rotate(0, 0, -rotation_speed, Space.World);
+      zAxis -= rotation_speed * Time.deltaTime;
+      //transform.Rotate(0, 0, -rotation_speed, Space.World);
     } else {
       ball_go.transform.parent = null;
     }
@@ -103,17 +113,27 @@ public class PlatformController : MonoBehaviour
       //ball_rb.isKinematic = true;
       ball_rb.WakeUp();
       //ball_rb.angularDrag = 0;
-      transform.Rotate(0, -rotation_speed, 0, Space.World);
+      yAxis += rotation_speed * Time.deltaTime;
+      //transform.Rotate(0, -rotation_speed, 0, Space.World);
     } else if (r_trigger > 0) {
       ball_go.transform.parent = transform;
       //ball_rb.isKinematic = true;
       ball_rb.WakeUp();
-      transform.Rotate(0, rotation_speed, 0, Space.World);
+      yAxis -= rotation_speed * Time.deltaTime;
+      //transform.Rotate(0, rotation_speed, 0, Space.World);
       //ball_rb.angularDrag = 0;
     } else {
       //ball_rb.isKinematic = false;
       ball_go.transform.parent = null;
       //ball_rb.angularDrag = 0.05f;
     }
+  }
+
+  void FixedUpdate() {
+    Quaternion rotation = Quaternion.identity;
+    rotation = Quaternion.Euler(0, -yAxis, 0) * rotation;
+    rotation = Quaternion.Euler(xAxis, 0, 0) * rotation;
+    rotation = Quaternion.Euler(0, 0, zAxis) * rotation;
+    rb.MoveRotation(rotation);
   }
 }

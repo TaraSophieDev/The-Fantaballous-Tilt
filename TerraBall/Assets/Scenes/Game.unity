@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 207217639}
   - component: {fileID: 207217638}
+  - component: {fileID: 207217640}
   m_Layer: 0
   m_Name: Anchor
   m_TagString: Untagged
@@ -154,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball_go: {fileID: 886094414}
   ball_rb: {fileID: 886094415}
-  rotation_speed: 10
+  rotation_speed: 25
 --- !u!4 &207217639
 Transform:
   m_ObjectHideFlags: 0
@@ -170,6 +171,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &207217640
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207217637}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 10
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!1 &284683674
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +398,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7338428469874085173, guid: 9ca7dc79fdcac014fb3bd05b8c7e6932, type: 3}
       propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338428469874085173, guid: 9ca7dc79fdcac014fb3bd05b8c7e6932, type: 3}
+      propertyPath: m_Mass
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8661108493865415882, guid: 9ca7dc79fdcac014fb3bd05b8c7e6932, type: 3}
@@ -571,8 +592,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 35e7605d80f19ab41bfd84a3c86c6797, type: 3}
   m_PrefabInstance: {fileID: 1387560464}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1607668387
-MeshCollider:
+--- !u!65 &1607668385
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -581,7 +602,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 35e7605d80f19ab41bfd84a3c86c6797, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 30, y: 4, z: 30}
+  m_Center: {x: 0, y: 1.25, z: 0}

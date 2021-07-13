@@ -352,7 +352,7 @@ MonoBehaviour:
     m_Value: {fileID: 2800000, guid: 2aa0d696acaa0a1489c389021f979b8f, type: 3}
   tiledLayersSkyTextureScaleOffsetLayer0:
     m_OverrideState: 1
-    m_Value: {x: 3.2, y: 1, z: 0, w: 0}
+    m_Value: {x: 2, y: -1, z: 0, w: 0}
   tiledLayersSkyRotationLayer0:
     m_OverrideState: 0
     m_Value: 0
@@ -360,8 +360,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {x: 0.125, y: 0.125}
   tiledLayersSkyScrollRotationLayer0:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 2.33
   tiledLayersSkyColorLayer1:
     m_OverrideState: 1
     m_Value: {r: 0.42212528, g: 0.5849056, b: 0.568015, a: 1}
@@ -373,7 +373,7 @@ MonoBehaviour:
     m_Value: {fileID: 2800000, guid: 2aa0d696acaa0a1489c389021f979b8f, type: 3}
   tiledLayersSkyTextureScaleOffsetLayer1:
     m_OverrideState: 1
-    m_Value: {x: 4.59, y: 1, z: 0, w: 0}
+    m_Value: {x: 1, y: 1, z: 0, w: 0}
   tiledLayersSkyRotationLayer1:
     m_OverrideState: 0
     m_Value: 0
