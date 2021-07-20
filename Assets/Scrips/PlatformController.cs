@@ -12,7 +12,8 @@ public class PlatformController : MonoBehaviour
   public float rotation_speed = 5f;
 
   private float x_rotation, z_rotation, l_trigger, r_trigger;
-  //private bool ballIsParented;
+  public bool ballIsParented = false;
+
 
   float xAxis, zAxis, yAxis;
 
@@ -35,6 +36,16 @@ public class PlatformController : MonoBehaviour
       angle += 360;
 
       return Mathf.Repeat(angle, 360);
+  }
+
+  public void MakeParent() {
+    if (ballIsParented) {
+      ball_go.transform.parent = transform;
+      //ball_rb.isKinematic = true;
+    }
+    else {
+      ball_go.transform.parent = null;
+    }
   }
 
   public void HandleInput() {
@@ -69,54 +80,53 @@ public class PlatformController : MonoBehaviour
 
 
   void Start() {
-    //platform = transform.GetChild(0);
-    //rotation_speed *= Time.deltaTime;
     rb = GetComponent<Rigidbody>();
   }
 
   void Update() {
+    MakeParent();
     HandleInput();
     //ClampRotation(transform.eulerAngles.x, -20, 20);
     //ClampRotation(transform.eulerAngles.z, -20, 20);
     // ball_go.transform.localScale = Vector3.one;
 
     if (x_rotation > 0){
-      ball_go.transform.parent = transform;
+      ballIsParented = true;
       ball_rb.WakeUp();
       xAxis += rotation_speed * Time.deltaTime;
       //transform.Rotate(rotation_speed, 0, 0, Space.World);
     } else if (x_rotation < 0) {
-      ball_go.transform.parent = transform;
+      ballIsParented = true;
       ball_rb.WakeUp();
       xAxis -= rotation_speed * Time.deltaTime;
       //transform.Rotate(-rotation_speed, 0, 0, Space.World);
     } else {
-      ball_go.transform.parent = null;
+      ballIsParented = false;
     }
 
     if (z_rotation > 0) {
-      ball_go.transform.parent = transform;
+      ballIsParented = true;
       ball_rb.WakeUp();
       zAxis += rotation_speed * Time.deltaTime;
       //transform.Rotate(0, 0, rotation_speed, Space.World);
     } else if (z_rotation < 0) {
-      ball_go.transform.parent = transform;
+      ballIsParented = true;
       ball_rb.WakeUp();
       zAxis -= rotation_speed * Time.deltaTime;
       //transform.Rotate(0, 0, -rotation_speed, Space.World);
     } else {
-      ball_go.transform.parent = null;
+      ballIsParented = false;
     }
 
     if (l_trigger > 0) {
-      ball_go.transform.parent = transform;
+      ballIsParented = true;
       //ball_rb.isKinematic = true;
       ball_rb.WakeUp();
       //ball_rb.angularDrag = 0;
       yAxis += rotation_speed * Time.deltaTime;
       //transform.Rotate(0, -rotation_speed, 0, Space.World);
     } else if (r_trigger > 0) {
-      ball_go.transform.parent = transform;
+      ballIsParented = true;
       //ball_rb.isKinematic = true;
       ball_rb.WakeUp();
       yAxis -= rotation_speed * Time.deltaTime;
@@ -124,7 +134,7 @@ public class PlatformController : MonoBehaviour
       //ball_rb.angularDrag = 0;
     } else {
       //ball_rb.isKinematic = false;
-      ball_go.transform.parent = null;
+      ballIsParented = false;
       //ball_rb.angularDrag = 0.05f;
     }
   }
