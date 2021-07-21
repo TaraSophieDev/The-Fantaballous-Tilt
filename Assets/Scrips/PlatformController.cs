@@ -18,30 +18,9 @@ public class PlatformController : MonoBehaviour
   float xAxis, zAxis, yAxis;
 
 
-  void ClampRotation(float angle, float minAngle, float maxAngle, float clampAroundAngle = 0) {
-    clampAroundAngle += 180;
-    angle -= clampAroundAngle;
-
-    angle = WrapAngle(angle);
-    angle -= 180;
-    angle = Mathf.Clamp(angle, minAngle, maxAngle);
-
-    angle += 180;
-    
-    transform.rotation = Quaternion.Euler(angle, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + clampAroundAngle);
-  }
-
-  float WrapAngle(float angle) {
-    while (angle < 0)
-      angle += 360;
-
-      return Mathf.Repeat(angle, 360);
-  }
-
   public void MakeParent() {
     if (ballIsParented) {
       ball_go.transform.parent = transform;
-      //ball_rb.isKinematic = true;
     }
     else {
       ball_go.transform.parent = null;
@@ -86,20 +65,15 @@ public class PlatformController : MonoBehaviour
   void Update() {
     MakeParent();
     HandleInput();
-    //ClampRotation(transform.eulerAngles.x, -20, 20);
-    //ClampRotation(transform.eulerAngles.z, -20, 20);
-    // ball_go.transform.localScale = Vector3.one;
 
     if (x_rotation > 0){
       ballIsParented = true;
       ball_rb.WakeUp();
       xAxis += rotation_speed * Time.deltaTime;
-      //transform.Rotate(rotation_speed, 0, 0, Space.World);
     } else if (x_rotation < 0) {
       ballIsParented = true;
       ball_rb.WakeUp();
       xAxis -= rotation_speed * Time.deltaTime;
-      //transform.Rotate(-rotation_speed, 0, 0, Space.World);
     } else {
       ballIsParented = false;
     }
@@ -108,34 +82,24 @@ public class PlatformController : MonoBehaviour
       ballIsParented = true;
       ball_rb.WakeUp();
       zAxis += rotation_speed * Time.deltaTime;
-      //transform.Rotate(0, 0, rotation_speed, Space.World);
     } else if (z_rotation < 0) {
       ballIsParented = true;
       ball_rb.WakeUp();
       zAxis -= rotation_speed * Time.deltaTime;
-      //transform.Rotate(0, 0, -rotation_speed, Space.World);
     } else {
       ballIsParented = false;
     }
 
     if (l_trigger > 0) {
       ballIsParented = true;
-      //ball_rb.isKinematic = true;
       ball_rb.WakeUp();
-      //ball_rb.angularDrag = 0;
       yAxis += rotation_speed * Time.deltaTime;
-      //transform.Rotate(0, -rotation_speed, 0, Space.World);
     } else if (r_trigger > 0) {
       ballIsParented = true;
-      //ball_rb.isKinematic = true;
       ball_rb.WakeUp();
       yAxis -= rotation_speed * Time.deltaTime;
-      //transform.Rotate(0, rotation_speed, 0, Space.World);
-      //ball_rb.angularDrag = 0;
     } else {
-      //ball_rb.isKinematic = false;
       ballIsParented = false;
-      //ball_rb.angularDrag = 0.05f;
     }
   }
 
@@ -144,6 +108,14 @@ public class PlatformController : MonoBehaviour
     rotation = Quaternion.Euler(0, -yAxis, 0) * rotation;
     rotation = Quaternion.Euler(xAxis, 0, 0) * rotation;
     rotation = Quaternion.Euler(0, 0, zAxis) * rotation;
+
     rb.MoveRotation(rotation);
+  }
+
+  void LateUpdate() {
+
+    // Clamping in LateUpdate because else it would jitter. Idk why but this here works.
+    xAxis = Mathf.Clamp(xAxis, -20, 20);
+    zAxis = Mathf.Clamp(zAxis, -20, 20);
   }
 }
