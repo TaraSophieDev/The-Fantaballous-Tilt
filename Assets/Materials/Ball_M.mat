@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Ball_M
   m_Shader: {fileID: 4800000, guid: 055eab4e84dc70a47ae75b3125a22de6, type: 3}
-  m_ShaderKeywords: _FOG_ON _LIGHTING_BAKED_ON _LIGHTING_DYNAMIC_ON _SHADING_EVALUATION_MODE_PER_VERTEX
-    _TEXTURE_FILTER_MODE_POINT
+  m_ShaderKeywords: _BRDF_MODE_LAMBERT _FOG_ON _LIGHTING_BAKED_ON _LIGHTING_DYNAMIC_ON
+    _SHADING_EVALUATION_MODE_PER_VERTEX _TEXTURE_FILTER_MODE_POINT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -73,6 +73,7 @@ Material:
     - _AffineTextureWarpingWeight: 1
     - _AlphaClip: 0
     - _AlphaClippingDitherIsEnabled: 0
+    - _BRDFMode: 0
     - _Blend: 0
     - _BlendOp: 0
     - _BumpScale: 1
