@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,72 +6,140 @@ using UnityEngine.InputSystem;
 
 public class PlatformController : MonoBehaviour
 {
-  public Transform originOverride;
-  Vector3 m_offset;
-  public Camera playerCamera;
-  public float cameraDistance = 10f;
-  public float cameraHeight = 10f;
-  public float maximumBallSpeed = 10f;
-  public float ballGravity = 1f;
-  public float angleLimit = 45f;
+  public GameObject ball_go;
   public Rigidbody ball_rb;
 
-  public float rotation_speed = 5f;
+  private Rigidbody rb;
+  public float rotation_speed = 25f;
 
-  private float y_rotation, x_rotation, z_rotation;
+  private float counter = 0;
+  private float x_rotation, z_rotation, targetYRotation;
+  private bool l_trigger, r_trigger;
+  public bool ballIsParented = false;
 
-  Quaternion worldRotator;
+
+  float xAxis, zAxis, yAxis;
+
+
+  public float Countdown(float timeToCountDown = 1.0f) {
+    counter -= Time.deltaTime / timeToCountDown;
+    return counter;
+  }
+  public void MakeParent() {
+    if (ballIsParented) {
+      ball_go.transform.parent = transform;
+      ball_rb.constraints = RigidbodyConstraints.FreezeAll;
+    }
+    else {
+      ball_go.transform.parent = null;
+      ball_rb.constraints = RigidbodyConstraints.None;
+    }
+  }
 
   public void HandleInput() {
+    x_rotation = z_rotation = 0.0f;
+
     // Gamepad
     if (Gamepad.current != null) {
-      y_rotation += Gamepad.current.leftStick.y.ReadValue() * 30.0f *Time.deltaTime;
-      x_rotation += Gamepad.current.leftStick.x.ReadValue() * 30.0f * Time.deltaTime;
-    } 
-    else {
+      x_rotation = Gamepad.current.leftStick.x.ReadValue() * 30.0f;
+      z_rotation = Gamepad.current.leftStick.y.ReadValue() * 30.0f;
+      l_trigger = Gamepad.current.leftTrigger.wasPressedThisFrame;
+      r_trigger = Gamepad.current.rightTrigger.wasPressedThisFrame;
+    } else {
       // left and right rotation
       if (Keyboard.current.aKey.IsPressed())
-        y_rotation = Mathf.Clamp(y_rotation - 1 * rotation_speed * Time.deltaTime, -angleLimit, angleLimit);
+        x_rotation -= 1;
       if (Keyboard.current.dKey.IsPressed())
-        y_rotation = Mathf.Clamp(y_rotation + 1 * rotation_speed * Time.deltaTime, -angleLimit, angleLimit);
+        x_rotation += 1;
 
+      // forwards and backwards rotation
       if (Keyboard.current.wKey.IsPressed())
-        x_rotation = Mathf.Clamp(x_rotation + 1 * rotation_speed * Time.deltaTime, -angleLimit, angleLimit * 0.5f);
+        z_rotation += 1;
       if (Keyboard.current.sKey.IsPressed())
-        x_rotation = Mathf.Clamp(x_rotation - 1 * rotation_speed * Time.deltaTime, -angleLimit, angleLimit*0.5f);
+        z_rotation -= 1;
 
-      if(Keyboard.current.qKey.IsPressed())
-        z_rotation = z_rotation + 1 * rotation_speed * Time.deltaTime;
-      if (Keyboard.current.eKey.IsPressed())
-        z_rotation = z_rotation - 1 * rotation_speed * Time.deltaTime;
+      // // Y axis rotation
+      // if (Keyboard.current.qKey.IsPressed())
+      //   l_trigger += 1;
+      // if (Keyboard.current.eKey.IsPressed())
+      //   r_trigger += 1;
     }
   }
 
 
   void Start() {
-    CalculateRotation();
+    rb = GetComponent<Rigidbody>();
   }
 
-  private void Update(){
+  void Update() {
+    print(counter);
+    Countdown();
+    MakeParent();
     HandleInput();
+
+    if (x_rotation > 0){
+      //ballIsParented = true;
+      ball_rb.WakeUp();
+      xAxis += rotation_speed * Time.deltaTime;
+    } else if (x_rotation < 0) {
+      //ballIsParented = true;
+      ball_rb.WakeUp();
+      xAxis -= rotation_speed * Time.deltaTime;
+    } else {
+      //ballIsParented = false;
+    }
+
+    if (z_rotation > 0) {
+      //ballIsParented = true;
+      ball_rb.WakeUp();
+      zAxis += rotation_speed * Time.deltaTime;
+    } else if (z_rotation < 0) {
+      //ballIsParented = true;
+      ball_rb.WakeUp();
+      zAxis -= rotation_speed * Time.deltaTime;
+    } else {
+      //ballIsParented = false;
+    }
+    
+    if (counter < 0.0f) {
+      if ((rb.angularVelocity.y > 0.75) || (rb.angularVelocity.y > -0.75)) {
+        ballIsParented = true;
+      }
+      else {
+        ballIsParented = false;
+      }
+      if (l_trigger == true) {
+        counter = 1;
+        //ballIsParented = true;
+        ball_rb.WakeUp();
+        targetYRotation += 45;
+      } else if (r_trigger == true) {
+        counter = 1;
+        //ballIsParented = true;
+        ball_rb.WakeUp();
+        targetYRotation -= 45;
+        //yAxis -= 1;
+      } else {
+        //ballIsParented = false;
+      }
+    }
+    
   }
 
   void FixedUpdate() {
-    CalculateRotation();
+    Quaternion rotation = Quaternion.identity;
+    rotation = Quaternion.Euler(0, -yAxis, 0) * rotation;
+    rotation = Quaternion.Euler(xAxis, 0, 0) * rotation;
+    rotation = Quaternion.Euler(0, 0, zAxis) * rotation;
 
-    ball_rb.velocity += Vector3.ProjectOnPlane(Vector3.Lerp(-playerCamera.transform.up, playerCamera.transform.forward, (x_rotation + angleLimit) / (angleLimit*0.5f + angleLimit)), Vector3.up) * ballGravity;
-    ball_rb.velocity = Vector3.ClampMagnitude(ball_rb.velocity, maximumBallSpeed);
+    rb.MoveRotation(rotation);
   }
 
-  public void CalculateRotation() {
-    if (originOverride != null)
-      m_offset = originOverride.transform.position;
-    else
-      m_offset = Vector3.zero;
+  void LateUpdate() {
 
-      playerCamera.transform.position = m_offset + ((Quaternion.Euler(x_rotation, z_rotation, 0f) * new Vector3(0f,cameraHeight, cameraDistance)));
-      playerCamera.transform.rotation = Quaternion.LookRotation(m_offset-playerCamera.transform.position) * Quaternion.Euler(0f, 0f, y_rotation);
+    // Clamping in LateUpdate because else it would jitter. Idk why but this here works.
+    xAxis = Mathf.Clamp(xAxis, -20, 20);
+    zAxis = Mathf.Clamp(zAxis, -20, 20);
+    yAxis = Mathf.LerpAngle(yAxis, targetYRotation, Time.deltaTime * 2f);
   }
-
-  //t = (c - a / (b-a))
 }
