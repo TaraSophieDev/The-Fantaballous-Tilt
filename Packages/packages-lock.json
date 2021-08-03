@@ -7,14 +7,14 @@
       "dependencies": {
         "com.unity.render-pipelines.core": "7.3.1"
       },
-      "hash": "418c62fd969b30a90b3e82c264144545973aee59"
+      "hash": "5419a00e4e434a24c31e0ac5fa7fa3cf944cd191"
     },
     "com.jamathan.gridplacer": {
       "version": "git@github.com:JanMalitschek/Grid-Placer.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "5297b502046f529f4f84777143df74cbb8638732"
+      "hash": "e75d0884a4ba2412598851b705548a31183551f3"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",

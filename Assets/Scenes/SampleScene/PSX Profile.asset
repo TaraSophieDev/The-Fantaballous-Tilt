@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8091857074034209455
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad71758d66b75b45a6157133f3e6024, type: 3}
+  m_Name: AccumulationMotionBlurVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  weight:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 1
+  vignette:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -1
+    max: 1
+  dither:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  zoom:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -1
+    max: 1
+  zoomDither:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 1
+  anisotropy:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -1
+    max: 1
+  applyToUIOverlay:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &-7306646570291009635
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -229,6 +276,11 @@ MonoBehaviour:
     m_Value: 1
     min: 0
     max: 1
+  ditherSize:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 1
+    max: 8
   drawDistanceFalloffMode:
     m_OverrideState: 0
     m_Value: 0
@@ -295,12 +347,13 @@ MonoBehaviour:
   - {fileID: -3792720743058523575}
   - {fileID: 812797736351750484}
   - {fileID: 4625138653647242585}
-  - {fileID: 6734286989554608247}
   - {fileID: -7306646570291009635}
   - {fileID: 906039860067577366}
   - {fileID: -5348637206390784081}
   - {fileID: -5863598003179307277}
   - {fileID: -6138956543134155949}
+  - {fileID: -8091857074034209455}
+  - {fileID: 8912177402767421286}
 --- !u!114 &812797736351750484
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -324,7 +377,7 @@ MonoBehaviour:
     min: 0
     max: 1
   skyRotation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {x: 0, y: 0, z: 0}
   textureFilterMode:
     m_OverrideState: 1
@@ -333,17 +386,17 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {fileID: 0}
   tiledLayersSkyHeightScale:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.25
     min: 0
   tiledLayersSkyHorizonOffset:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
     min: -1
     max: 1
   tiledLayersSkyColorLayer0:
     m_OverrideState: 1
-    m_Value: {r: 0.31702027, g: 0.7924528, b: 0.12335351, a: 1}
+    m_Value: {r: 0.4251958, g: 0.436801, b: 0.46226418, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
@@ -354,10 +407,10 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {x: 2, y: -1, z: 0, w: 0}
   tiledLayersSkyRotationLayer0:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   tiledLayersSkyScrollScaleLayer0:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {x: 0.125, y: 0.125}
   tiledLayersSkyScrollRotationLayer0:
     m_OverrideState: 1
@@ -375,13 +428,13 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 0, w: 0}
   tiledLayersSkyRotationLayer1:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   tiledLayersSkyScrollScaleLayer1:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {x: -0.25, y: -0.25}
   tiledLayersSkyScrollRotationLayer1:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
 --- !u!114 &906039860067577366
 MonoBehaviour:
@@ -398,7 +451,7 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   isEnabled:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   fogFalloffMode:
     m_OverrideState: 0
@@ -543,7 +596,7 @@ MonoBehaviour:
     m_Value: 4
     min: 1
     max: 8
---- !u!114 &6734286989554608247
+--- !u!114 &8912177402767421286
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
