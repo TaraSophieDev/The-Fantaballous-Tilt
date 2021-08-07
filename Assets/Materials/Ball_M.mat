@@ -10,7 +10,7 @@ Material:
   m_Name: Ball_M
   m_Shader: {fileID: 4800000, guid: 055eab4e84dc70a47ae75b3125a22de6, type: 3}
   m_ShaderKeywords: _BRDF_MODE_LAMBERT _FOG_ON _LIGHTING_BAKED_ON _LIGHTING_DYNAMIC_ON
-    _SHADING_EVALUATION_MODE_PER_VERTEX _TEXTURE_FILTER_MODE_POINT
+    _SHADING_EVALUATION_MODE_PER_VERTEX _TEXTURE_FILTER_MODE_N64_MIPMAPS
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -107,9 +107,10 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _TextureFilterMode: 1
+    - _TextureFilterMode: 4
     - _UVAnimationMode: 0
     - _UVSec: 0
+    - _VertexColorBlendMode: 0
     - _VertexColorMode: 0
     - _ZWrite: 1
     m_Colors:

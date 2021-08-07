@@ -66,6 +66,7 @@ Material:
     - _Surface: 0
     - _TextureFilterMode: 0
     - _UVAnimationMode: 0
+    - _VertexColorBlendMode: 0
     - _VertexColorMode: 1
     - _ZWrite: 1
     m_Colors:
