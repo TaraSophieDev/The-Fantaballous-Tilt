@@ -7,16 +7,16 @@ public class CameraFollowObject : MonoBehaviour {
   
   [SerializeField] private GameObject anchor;
   [SerializeField] private GameObject ball;
-  private Vector3 offset;
+  [SerializeField] private Vector3 offset;
   
   public bool isBallFollowed = false;
   // Start is called before the first frame update
 
   void BoolSwitcher() {
     if (isBallFollowed)
-        isBallFollowed = false;
+      isBallFollowed = false;
     else
-        isBallFollowed = true;
+      isBallFollowed = true;
   }
   
 
