@@ -21,7 +21,7 @@ public class PlatformController : MonoBehaviour {
   float xAxis, zAxis, yAxis;
 
 
-  public float Countdown(float timeToCountDown = 1.0f) {
+  public float Countdown(float timeToCountDown = 1f) {
     counter -= Time.deltaTime / timeToCountDown;
     return counter;
   }
@@ -130,7 +130,7 @@ public class PlatformController : MonoBehaviour {
     else
       ballIsParented = false;
 
-    if (counter < 0.0f) {
+    if (counter < 0.5f) {
       if (l_trigger == true) {
         counter = 1;
         //ballIsParented = true;
@@ -165,11 +165,11 @@ public class PlatformController : MonoBehaviour {
     yAxis = Mathf.LerpAngle(yAxis, targetYRotation, Time.deltaTime * 2f);
   }
 
-  private void OnGUI() {
-    if (true) {
-      GUI.Box(new Rect(50, 0, 150, 100), "Gyroscope");
-      GUI.Label(new Rect(50, 20, 150, 100), "g_z = ");
-      GUI.Label(new Rect(50, 40, 150, 100), "g_x = ");
-    }
-  }
+  // private void OnGUI() {
+  //   if (false) {
+  //     GUI.Box(new Rect(50, 0, 150, 100), "Gyroscope");
+  //     GUI.Label(new Rect(50, 20, 150, 100), "g_z = ");
+  //     GUI.Label(new Rect(50, 40, 150, 100), "g_x = ");
+  //   }
+  // }
 }
