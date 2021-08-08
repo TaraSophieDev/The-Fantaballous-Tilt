@@ -1,18 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Hole : MonoBehaviour {
-  
+  private GameObject ball;
+  private GameObject spawnPoint;
+  // [SerializeField] private GameObject ball;
+  // [SerializeField] private GameObject spawnPoint;
+
   private void OnTriggerEnter(Collider other) {
     if (other.gameObject.CompareTag("Player")) {
-      print("HAHA");
+      ball.transform.position = spawnPoint.transform.position;
     }
   }
-  
+
   void Start() {
-  }
-  
-  void Update() {
+    ball = GameObject.FindWithTag("Player");
+    spawnPoint = GameObject.FindWithTag("SpawnPoint");
   }
 }
