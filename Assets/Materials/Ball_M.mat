@@ -123,6 +123,6 @@ Material:
     - _PrecisionColorOverrideParameters: {r: 0, g: 0, b: 0, a: 0}
     - _PrecisionGeometryOverrideParameters: {r: 0, g: 0, b: 0, a: 0}
     - _ReflectionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _UVAnimationParameters: {r: 4, g: 4, b: 10, a: 0}
+    - _UVAnimationParameters: {r: 1, g: 1, b: 0, a: 0}
     - _UVAnimationParametersFrameLimit: {r: 0, g: 60, b: 0, a: 0}
   m_BuildTextureStacks: []
