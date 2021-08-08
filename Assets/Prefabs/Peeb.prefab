@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 4069066907928107718}
   - component: {fileID: 2867037565983154410}
   m_Layer: 0
-  m_Name: Peeb 1
+  m_Name: Peeb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
