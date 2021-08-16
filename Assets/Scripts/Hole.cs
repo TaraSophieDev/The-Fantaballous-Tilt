@@ -12,7 +12,9 @@ public class Hole : MonoBehaviour {
   private void OnTriggerEnter(Collider other) {
     if (other.gameObject.CompareTag("Player")) {
       ball.transform.position = spawnPoint.transform.position;
-      
+      Ball ballScript = new Ball();
+      ballScript.removeLifePoint();
+      print(ballScript.lifePoints);
     }
   }
 
