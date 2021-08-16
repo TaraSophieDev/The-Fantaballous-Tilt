@@ -125,7 +125,7 @@ public class PlatformController : MonoBehaviour {
     // else {
     //   ballIsParented = false;
     // }
-    if (counter > 0.0f)
+    if (counter > 0.2f)
       ballIsParented = true;
     else
       ballIsParented = false;

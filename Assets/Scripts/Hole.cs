@@ -12,11 +12,13 @@ public class Hole : MonoBehaviour {
   private void OnTriggerEnter(Collider other) {
     if (other.gameObject.CompareTag("Player")) {
       ball.transform.position = spawnPoint.transform.position;
+      
     }
   }
 
   void Start() {
     ball = GameObject.FindWithTag("Player");
+    
     spawnPoint = GameObject.FindWithTag("SpawnPoint");
   }
 }
