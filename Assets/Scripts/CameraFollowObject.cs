@@ -32,6 +32,7 @@ public class CameraFollowObject : MonoBehaviour {
         }
       }
       else {
+        //Only works when object has a rigidbody kinematic
         if (hit.transform.TryGetComponent(out MeshRenderer disableMR)) {
           if (disableMR != hiddenMR) {
             if (hiddenMR)
