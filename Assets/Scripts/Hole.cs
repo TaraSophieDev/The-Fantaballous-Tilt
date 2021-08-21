@@ -6,21 +6,22 @@ using UnityEngine;
 public class Hole : MonoBehaviour {
   private GameObject ball;
   private GameObject spawnPoint;
+
+  private LifeManager lifeSystem;
   // [SerializeField] private GameObject ball;
   // [SerializeField] private GameObject spawnPoint;
 
   private void OnTriggerEnter(Collider other) {
     if (other.gameObject.CompareTag("Player")) {
       ball.transform.position = spawnPoint.transform.position;
-      Ball ballScript = new Ball();
-      ballScript.removeLifePoint();
-      print(ballScript.lifePoints);
+      lifeSystem.TakeLife();
     }
   }
 
   void Start() {
-    ball = GameObject.FindWithTag("Player");
+    lifeSystem = FindObjectOfType<LifeManager>();
     
+    ball = GameObject.FindWithTag("Player");
     spawnPoint = GameObject.FindWithTag("SpawnPoint");
   }
 }
