@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Policy;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using UnityEngine.Windows.WebCam;
 
 public class CameraFollowObject : MonoBehaviour {
   
@@ -13,10 +15,35 @@ public class CameraFollowObject : MonoBehaviour {
 
   private GameObject ball;
   private Vector3 offset;
+  private RaycastHit hit;
+  private MeshRenderer hiddenMR;
 
   public bool isBallFollowed = false;
   // Start is called before the first frame update
 
+  private void RaycastBall() {
+    if (Physics.Raycast(transform.position, (ball.transform.position - transform.position), out hit, Mathf.Infinity, ~(1<<2))) {
+      print(hit.transform.tag);
+      if (hit.transform.CompareTag("Player")) {
+        print("check");
+        if (hiddenMR) {
+          hiddenMR.enabled = true;
+          hiddenMR = null;
+        }
+      }
+      else {
+        if (hit.transform.TryGetComponent(out MeshRenderer disableMR)) {
+          if (disableMR != hiddenMR) {
+            if (hiddenMR)
+              hiddenMR.enabled = true;
+            hiddenMR = disableMR;
+            hiddenMR.enabled = false;
+          }
+        }
+      }
+    }
+  }
+  
   void BoolSwitcher() {
     if (isBallFollowed)
       isBallFollowed = false;
@@ -67,4 +94,14 @@ public class CameraFollowObject : MonoBehaviour {
     else
       transform.position += ((ball.transform.position + offset * zoom) - transform.position) * followSpeed;
   }
+
+  private void Update() {
+    RaycastBall();
+  }
+
+  // private void OnDrawGizmos() {
+  //   Gizmos.color = Color.red;
+  //   Gizmos.DrawLine(transform.position, ball.transform.position);
+  //   
+  // }
 }
