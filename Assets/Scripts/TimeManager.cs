@@ -12,7 +12,7 @@ public class TimeManager : MonoBehaviour {
   private TextMeshProUGUI timerText;
 
   void StartTimer() {
-    currentTime += Time.deltaTime;
+    currentTime = Time.timeAsDouble - startingTime;
   }
   void Start() {
     currentTime = startingTime;
@@ -22,7 +22,7 @@ public class TimeManager : MonoBehaviour {
   void Update() {
     StartTimer();
     currentTime = Math.Round(currentTime, 2);
-    timerText.text = Convert.ToString(currentTime);
+    timerText.text = "Time: " + Convert.ToString(currentTime);
     print(currentTime);
   }
 }
