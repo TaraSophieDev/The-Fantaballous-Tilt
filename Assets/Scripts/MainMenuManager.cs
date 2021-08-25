@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour {
-    void Start() {
-        
-    }
-
-    void Update() {
-        
-    }
+  private void CloseGame() {
+    Application.Quit();
+  }
 }
