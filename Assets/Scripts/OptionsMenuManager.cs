@@ -10,9 +10,17 @@ public class OptionsMenuManager : MonoBehaviour {
 
   public TMP_Dropdown resolutionDropdown;
   public AudioMixer audioMixer;
-  
+
 
   private Resolution[] resolutions;
+
+  public void SetFramerate(float val) {
+    if (val < 256)
+      Application.targetFrameRate = (int)val;
+    else
+      Application.targetFrameRate = -1;
+    print(Application.targetFrameRate);
+  }
 
   public void SetVSync(bool isVSync) {
     if (isVSync)
@@ -21,7 +29,7 @@ public class OptionsMenuManager : MonoBehaviour {
       QualitySettings.vSyncCount = 0;
     print(QualitySettings.vSyncCount);
   }
-  
+
   public void SetResolution(int val) {
     switch (val) {
       case 0:
@@ -41,27 +49,28 @@ public class OptionsMenuManager : MonoBehaviour {
         break;
     }
   }
-  
+
   public void SetFullscreen(bool isFullscreen) {
     Screen.fullScreen = isFullscreen;
   }
-  
+
   public void SetVolume(float volume) {
     audioMixer.SetFloat("Volume", volume);
   }
+
   void Start() {
-  //   resolutions = Screen.resolutions;
-  //   
-  //   resolutionDropdown.ClearOptions();
-  //
-  //   List<string> options = new List<string>();
-  //
-  //   for (int i = 0; i < resolutions.Length; i++) {
-  //     string option = resolutions[i].width + " x " + resolutions[i].height;
-  //     options.Add(option);
-  //   }
-  //   
-  //   resolutionDropdown.AddOptions(options);
+    //   resolutions = Screen.resolutions;
+    //   
+    //   resolutionDropdown.ClearOptions();
+    //
+    //   List<string> options = new List<string>();
+    //
+    //   for (int i = 0; i < resolutions.Length; i++) {
+    //     string option = resolutions[i].width + " x " + resolutions[i].height;
+    //     options.Add(option);
+    //   }
+    //   
+    //   resolutionDropdown.AddOptions(options);
   }
 
   void Update() {
