@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class LevelSelectManager : MonoBehaviour {
 
-  public Button[] lvlButtons;
-
   public void LoadScene(int levelNumber) {
     levelNumber += 1;
     SceneManager.LoadScene(levelNumber);
