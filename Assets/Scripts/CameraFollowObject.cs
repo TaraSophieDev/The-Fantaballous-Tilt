@@ -23,9 +23,7 @@ public class CameraFollowObject : MonoBehaviour {
 
   private void RaycastBall() {
     if (Physics.Raycast(transform.position, (ball.transform.position - transform.position), out hit, Mathf.Infinity, ~(1<<2))) {
-      print(hit.transform.tag);
       if (hit.transform.CompareTag("Player")) {
-        print("check");
         if (hiddenMR) {
           hiddenMR.enabled = true;
           hiddenMR = null;
