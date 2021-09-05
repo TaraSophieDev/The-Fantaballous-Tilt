@@ -8,18 +8,24 @@ using UnityEngine.Audio;
 
 public class OptionsMenuManager : MonoBehaviour {
 
+  // public Volume v;
+  // private CameraVolume cameraV;
+
   public TMP_Dropdown resolutionDropdown;
   public AudioMixer audioMixer;
 
 
   private Resolution[] resolutions;
 
-  public void SetFramerate(float val) {
-    if (val < 256)
-      Application.targetFrameRate = (int)val;
-    else
-      Application.targetFrameRate = -1;
-    print(Application.targetFrameRate);
+  public void SetFramerate(int val) {
+    // if (val < 256) {
+    //   //cameraV.isFrameLimitEnabled.value = true;
+    //   cameraV.frameLimit.value = val;
+    // }
+    //
+    // else
+    //   Application.targetFrameRate = -1;
+      //cameraV.isFrameLimitEnabled.value = false;
   }
 
   public void SetVSync(bool isVSync) {
@@ -59,6 +65,8 @@ public class OptionsMenuManager : MonoBehaviour {
   }
 
   void Start() {
+    // if (v.profile.TryGet<CameraVolume>(out CameraVolume cameraVolume))
+    //   cameraV = cameraVolume;
     //   resolutions = Screen.resolutions;
     //   
     //   resolutionDropdown.ClearOptions();
