@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour {
 
@@ -32,6 +33,9 @@ public class MainMenuManager : MonoBehaviour {
     //MainMenu.transform.GetComponentInChildren<Button>().gameObject
   }
 
+  public void GoToMainMenu() {
+    SceneManager.LoadScene(1);
+  }
   // Thanks a lot Jam <3
   public void SwitchLayer(string layerName) {
     foreach (var layer in m_MenuLayers) {
