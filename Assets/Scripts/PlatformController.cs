@@ -38,22 +38,7 @@ public class PlatformController : MonoBehaviour {
 
   public void HandleInput() {
     x_rotation = z_rotation = 0.0f;
-
-    //Smartphone
-    // if (accelerometer != null) {
-    //   InputSystem.EnableDevice(accelerometer);
-    //   // TODO: build in checks and setting for screen orientation in android build.
-    //   Screen.orientation = ScreenOrientation.LandscapeRight;
-    //   if (accelerometer.acceleration.x.ReadValue() > 5)
-    //     z_rotation += 1;
-    //   if (accelerometer.acceleration.z.ReadValue() > 5)
-    //     x_rotation += 1;
-    //   z_rotation = accelerometer.acceleration.x.ReadValue();
-    //   x_rotation = accelerometer.acceleration.z.ReadValue();
-    //   
-    //   // print("g_z = " + accelerometer.acceleration.x.ReadValue());
-    //   // print("g_x = " + accelerometer.acceleration.z.ReadValue());
-    // }
+    
     // Gamepad
     if (Gamepad.current != null) {
       x_rotation = Gamepad.current.leftStick.x.ReadValue() * 30.0f;
