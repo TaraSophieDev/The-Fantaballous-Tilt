@@ -20,6 +20,9 @@ public class PlatformController : MonoBehaviour {
 
   float xAxis, zAxis, yAxis;
 
+  private void Awake() {
+    Time.timeScale = 1f;
+  }
 
   public float Countdown(float timeToCountDown = 1f) {
     counter -= Time.deltaTime / timeToCountDown;
