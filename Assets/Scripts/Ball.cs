@@ -6,12 +6,16 @@ using UnityEngine.InputSystem;
 
 public class Ball : MonoBehaviour {
   private GameObject pauseMenu;
+  [SerializeField] private GameObject nextLevelPrompt;
 
   private void ActivatePauseMenu() {
-    if (pauseMenu.activeSelf == false)
+    if (pauseMenu.activeSelf == false) {
       pauseMenu.SetActive(true);
+      Time.timeScale = 0f;
+    }
     else {
       pauseMenu.SetActive(false);
+      Time.timeScale = 1f;
     }
   }
   
@@ -21,7 +25,8 @@ public class Ball : MonoBehaviour {
   }
   
   private void Update() {
-    if (Gamepad.current != null && Gamepad.current.startButton.wasPressedThisFrame || Keyboard.current.escapeKey.wasPressedThisFrame)
-      ActivatePauseMenu();
+    if (nextLevelPrompt.activeSelf == false)
+      if (Gamepad.current != null && Gamepad.current.startButton.wasPressedThisFrame || Keyboard.current.escapeKey.wasPressedThisFrame)
+        ActivatePauseMenu();
   }
 }
