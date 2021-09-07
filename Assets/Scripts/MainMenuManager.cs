@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.SceneManagement;
 
@@ -33,6 +31,10 @@ public class MainMenuManager : MonoBehaviour {
     //MainMenu.transform.GetComponentInChildren<Button>().gameObject
   }
 
+  public void GoToNextLevel() {
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+  }
+  
   public void GoToMainMenu() {
     SceneManager.LoadScene(1);
   }
