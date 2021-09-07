@@ -12,15 +12,17 @@ public class TimeManager : MonoBehaviour {
   private double startingTime;
 
   private bool timerOn = false;
+  private bool levelFinished = false;
 
   private TextMeshProUGUI timerText;
 
-  private void StartTimer() {
+  private void RunningTimer() {
     currentTime = Time.timeSinceLevelLoad - startingTime;
   }
 
   public void StopTimer() {
-    timerOn = false;
+    print("stop time");
+    levelFinished = true;
   }
   void Start() {
     //startingTime = 0.0;
@@ -31,6 +33,7 @@ public class TimeManager : MonoBehaviour {
   }
 
   private void ResetValues() {
+    levelFinished = false;
     startingTime = 0.0;
     currentTime = 0.0;
     timerOn = true;
@@ -44,14 +47,20 @@ public class TimeManager : MonoBehaviour {
   }
 
   void Update() {
-    if (pauseMenu.activeSelf == true)
+    if (!levelFinished) {
+      print("not finished");
+      if (pauseMenu.activeSelf == true)
+        timerOn = false;
+      else
+        timerOn = true;
+    }
+    else {
       timerOn = false;
-    else
-      timerOn = true;
+    }
       
     print(timerOn);
-    if (timerOn)
-      StartTimer();
+    if (timerOn || !levelFinished)
+      RunningTimer();
     // else if (!timerOn)
       //print("timer off");
       currentTime = Math.Round(currentTime, 2);
