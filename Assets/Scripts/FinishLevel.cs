@@ -8,14 +8,17 @@ using UnityEngine.InputSystem;
 public class FinishLevel : MonoBehaviour {
   
   [SerializeField] private TimeManager timeManager;
+  [SerializeField] private GameObject NextLevelPrompt;
 
   private double time;
 
   private void OnTriggerEnter(Collider other) {
     if (other.gameObject.CompareTag("Player")) {
-      timeManager.StopTimer();
-      time = timeManager.currentTime;
-      print(time);
+      NextLevelPrompt.SetActive(true);
+      Time.timeScale = 0f;
+      //timeManager.StopTimer();
+      //time = timeManager.currentTime;
+      //print(time);
       //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
   }
