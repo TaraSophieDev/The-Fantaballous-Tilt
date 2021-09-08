@@ -17,9 +17,7 @@ public class Hole : MonoBehaviour {
     }
   }
 
-  void Start() {
-    //lifeSystem = FindObjectOfType<LifeManager>();
-    
+  private void Awake() {
     ball = GameObject.FindWithTag("Player");
     spawnPoint = GameObject.FindWithTag("SpawnPoint");
   }
