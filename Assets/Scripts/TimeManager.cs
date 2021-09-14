@@ -48,7 +48,6 @@ public class TimeManager : MonoBehaviour {
 
   void Update() {
     if (!levelFinished) {
-      print("not finished");
       if (pauseMenu.activeSelf == true)
         timerOn = false;
       else
@@ -57,8 +56,7 @@ public class TimeManager : MonoBehaviour {
     else {
       timerOn = false;
     }
-      
-    print(timerOn);
+    
     if (timerOn || !levelFinished)
       RunningTimer();
     // else if (!timerOn)
