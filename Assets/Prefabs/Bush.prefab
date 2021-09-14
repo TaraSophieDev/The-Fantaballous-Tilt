@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5052515259416420235}
-  - component: {fileID: 8192602213970776110}
   - component: {fileID: 6220894984227153124}
   - component: {fileID: 953304587393503465}
+  - component: {fileID: 4690840101580061630}
   m_Layer: 0
   m_Name: Bush
   m_TagString: Untagged
@@ -33,14 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8192602213970776110
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5572627808270796081}
-  m_Mesh: {fileID: 5958362384829529401, guid: f327a2f4dbfe8ca46b344c239895943a, type: 3}
 --- !u!23 &6220894984227153124
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -95,3 +87,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &4690840101580061630
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5572627808270796081}
+  m_Mesh: {fileID: 5958362384829529401, guid: f327a2f4dbfe8ca46b344c239895943a, type: 3}

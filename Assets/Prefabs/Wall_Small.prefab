@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PolyMesh:
-    name: PolybrushMesh27538
+    name: PolybrushMesh20230
     vertices:
     - {x: 0.5, y: -0.5, z: 0.5}
     - {x: -0.5, y: -0.5, z: 0.5}
@@ -163,53 +163,53 @@ MonoBehaviour:
     - {x: 1, y: 0, z: 0}
     colors:
     - serializedVersion: 2
-      rgba: 4279329728
+      rgba: 4281289406
     - serializedVersion: 2
-      rgba: 4279329728
+      rgba: 4281289406
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4282611415
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4282611415
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4282940120
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4282611415
     - serializedVersion: 2
-      rgba: 4279329728
+      rgba: 4281289406
     - serializedVersion: 2
-      rgba: 4279329728
+      rgba: 4281289406
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4282611415
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4282611415
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4282940120
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4282611415
     - serializedVersion: 2
-      rgba: 4279329728
+      rgba: 4281289406
     - serializedVersion: 2
-      rgba: 4279329728
+      rgba: 4281289406
     - serializedVersion: 2
-      rgba: 4279329728
+      rgba: 4281289406
     - serializedVersion: 2
-      rgba: 4279329728
+      rgba: 4281289406
     - serializedVersion: 2
-      rgba: 4279329728
+      rgba: 4281289406
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4282611415
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4282611415
     - serializedVersion: 2
-      rgba: 4279329728
+      rgba: 4281289406
     - serializedVersion: 2
-      rgba: 4279329728
+      rgba: 4281289406
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4282940120
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4282611415
     - serializedVersion: 2
-      rgba: 4279329728
+      rgba: 4281289406
     tangents:
     - {x: -1, y: 0, z: 0, w: -1}
     - {x: -1, y: 0, z: 0, w: -1}
