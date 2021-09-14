@@ -10,10 +10,4 @@ public class LevelSelectManager : MonoBehaviour {
     levelNumber += 1;
     SceneManager.LoadScene(levelNumber);
   }
-  
-  void Start() {
-  }
-
-  void Update() {
-  }
 }
