@@ -6773,6 +6773,10 @@ PrefabInstance:
       propertyPath: NextLevelPrompt
       value: 
       objectReference: {fileID: 719783177}
+    - target: {fileID: 6270930714718474654, guid: 8489c74700f272e438e6969dfef2c853, type: 3}
+      propertyPath: nextLevelButton
+      value: 
+      objectReference: {fileID: 1226303726}
     - target: {fileID: 7527455387589298152, guid: 8489c74700f272e438e6969dfef2c853, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7227,6 +7231,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1181155608071692997}
     m_Modifications:
+    - target: {fileID: 776416992493000038, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5705811556608940672}
+    - target: {fileID: 776416992493000038, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326442734123121055, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 5705811556669202301, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4
@@ -7238,7 +7254,11 @@ PrefabInstance:
     - target: {fileID: 5705811556669202301, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1181155608071693018}
+      objectReference: {fileID: 5705811556608940672}
+    - target: {fileID: 5705811556669202301, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToNextLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 5705811556839103123, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4
@@ -7250,7 +7270,11 @@ PrefabInstance:
     - target: {fileID: 5705811556839103123, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1181155608071693018}
+      objectReference: {fileID: 5705811556608940672}
+    - target: {fileID: 5705811556839103123, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 5705811556963032949, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7343,8 +7367,27 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5949916947970674813, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
+      propertyPath: m_text
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 6554411973072860625, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
+      propertyPath: m_Name
+      value: RestartButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
+--- !u!114 &5705811556608940672 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4135941655994415308, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
+  m_PrefabInstance: {fileID: 5705811556608940671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719783177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f886dd56f939349418e39ac0585e78d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5709749948284170785
 Transform:
   m_ObjectHideFlags: 0
@@ -7373,7 +7416,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: SpawnPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7549,6 +7592,14 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
       objectReference: {fileID: 751380315}
+    - target: {fileID: 6193452317428195455, guid: c676d38da827e454cbc7031945122e9f, type: 3}
+      propertyPath: m_Name
+      value: RestartButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193452319064283321, guid: c676d38da827e454cbc7031945122e9f, type: 3}
+      propertyPath: m_text
+      value: Restart
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c676d38da827e454cbc7031945122e9f, type: 3}
 --- !u!1 &7013656765295579802
