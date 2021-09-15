@@ -12,7 +12,7 @@ public class FinishLevel : MonoBehaviour {
   [SerializeField] private TimeManager timeManager;
   [SerializeField] private GameObject NextLevelPrompt;
   private EventSystem eventSystem;
-  [SerializeField] private GameObject button;
+  [SerializeField] private GameObject nextLevelButton;
   
 
   private double time;
@@ -24,7 +24,7 @@ public class FinishLevel : MonoBehaviour {
   private void OnTriggerEnter(Collider other) {
     if (other.gameObject.CompareTag("Player")) {
       NextLevelPrompt.SetActive(true);
-      eventSystem.SetSelectedGameObject(button);
+      eventSystem.SetSelectedGameObject(nextLevelButton);
       Time.timeScale = 0f;
       //timeManager.StopTimer();
       //time = timeManager.currentTime;
