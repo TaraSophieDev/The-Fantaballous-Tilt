@@ -4,10 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour {
-  
-  void Start() {
-  }
-  
 
   void Update() {
     if (this.gameObject.activeSelf == true)
