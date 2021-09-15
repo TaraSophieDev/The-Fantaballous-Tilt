@@ -31,13 +31,17 @@ public class MainMenuManager : MonoBehaviour {
     //MainMenu.transform.GetComponentInChildren<Button>().gameObject
   }
 
-  public void GoToNextLevel() {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-  }
-  
-  public void GoToMainMenu() {
-    SceneManager.LoadScene(1);
-  }
+  // public void GoToNextLevel() {
+  //   SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+  // }
+  //
+  // public void RestartLevel() {
+  //   SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+  // }
+  //
+  // public void GoToMainMenu() {
+  //   SceneManager.LoadScene(1);
+  // }
   // Thanks a lot Jam <3
   public void SwitchLayer(string layerName) {
     foreach (var layer in m_MenuLayers) {
