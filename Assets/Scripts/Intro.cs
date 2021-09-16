@@ -21,7 +21,7 @@ public class Intro : MonoBehaviour {
       if (Gamepad.current.aButton.isPressed)
         LoadNextScene();
     }
-    else if (Keyboard.current.spaceKey.isPressed)
+    if (Keyboard.current.spaceKey.isPressed)
       LoadNextScene();
   }
 
