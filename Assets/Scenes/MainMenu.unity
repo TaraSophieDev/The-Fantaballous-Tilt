@@ -16596,6 +16596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeManager: {fileID: 0}
   NextLevelPrompt: {fileID: 0}
+  nextLevelButton: {fileID: 0}
 --- !u!65 &1506693848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21221,6 +21222,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1696574228068387965, guid: 280e1ef1771d4a546874e9827b98fc60, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696574228068387965, guid: 280e1ef1771d4a546874e9827b98fc60, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1696574228068387967, guid: 280e1ef1771d4a546874e9827b98fc60, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -21379,7 +21388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1696574229242154777, guid: 280e1ef1771d4a546874e9827b98fc60, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1696574229242154781, guid: 280e1ef1771d4a546874e9827b98fc60, type: 3}
       propertyPath: v
@@ -21392,11 +21401,11 @@ PrefabInstance:
     - target: {fileID: 1696574229284941987, guid: 280e1ef1771d4a546874e9827b98fc60, type: 3}
       propertyPath: m_Navigation.m_SelectOnLeft
       value: 
-      objectReference: {fileID: 907691958}
+      objectReference: {fileID: 0}
     - target: {fileID: 1696574229284941987, guid: 280e1ef1771d4a546874e9827b98fc60, type: 3}
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
-      objectReference: {fileID: 818158301}
+      objectReference: {fileID: 0}
     - target: {fileID: 1696574229805241004, guid: 280e1ef1771d4a546874e9827b98fc60, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

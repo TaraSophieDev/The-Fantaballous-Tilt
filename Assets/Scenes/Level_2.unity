@@ -9147,11 +9147,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5705811556963032949, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -320
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5705811556963032949, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -240
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5705811556963032949, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9169,8 +9169,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: NextLevelPrompt
       objectReference: {fileID: 0}
+    - target: {fileID: 5705811556963032950, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
+--- !u!1 &1526697242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5705811556669202303, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
+  m_PrefabInstance: {fileID: 1526697241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1526697243 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5705811556963032949, guid: 2298dc4d4f69ef94db839862895028aa, type: 3}
@@ -13730,11 +13739,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -13757,6 +13766,9 @@ MonoBehaviour:
   - Name: MainMenu
     UI: {fileID: 8403161916993036486}
     firstSelectedGO: {fileID: 8403161915547582515}
+  - Name: NextLevelPrompt
+    UI: {fileID: 1526697244}
+    firstSelectedGO: {fileID: 1526697242}
   eventSystem: {fileID: 1191051743}
 --- !u!33 &2076754556335833573
 MeshFilter:
@@ -14528,6 +14540,10 @@ PrefabInstance:
       propertyPath: nextLevelPrompt
       value: 
       objectReference: {fileID: 1526697244}
+    - target: {fileID: 7911700085321641773, guid: afd21f84785fb5445bb3888124effc90, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afd21f84785fb5445bb3888124effc90, type: 3}
 --- !u!1 &8403161915547582515
@@ -15192,9 +15208,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1181155608071693018}
-        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+      - m_Target: {fileID: 8403161916993036488}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: ExitToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

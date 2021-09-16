@@ -1354,7 +1354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 43605483325155402, guid: d3ad732bdc6436f47bc1e133b27c29f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.27
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 43605483325155402, guid: d3ad732bdc6436f47bc1e133b27c29f6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1362,7 +1362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 43605483325155402, guid: d3ad732bdc6436f47bc1e133b27c29f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.0600004
+      value: -4.58
       objectReference: {fileID: 0}
     - target: {fileID: 43605483325155402, guid: d3ad732bdc6436f47bc1e133b27c29f6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1642,7 +1642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5052515259416420235, guid: efe3a1da3cfbb4b4e830e982fcb409d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.27
+      value: 12.98
       objectReference: {fileID: 0}
     - target: {fileID: 5052515259416420235, guid: efe3a1da3cfbb4b4e830e982fcb409d1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4288,7 +4288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5052515259416420235, guid: efe3a1da3cfbb4b4e830e982fcb409d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.27
+      value: 4.7
       objectReference: {fileID: 0}
     - target: {fileID: 5052515259416420235, guid: efe3a1da3cfbb4b4e830e982fcb409d1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6762,7 +6762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 43605483325155402, guid: d3ad732bdc6436f47bc1e133b27c29f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.27
+      value: 0.78
       objectReference: {fileID: 0}
     - target: {fileID: 43605483325155402, guid: d3ad732bdc6436f47bc1e133b27c29f6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14224,11 +14224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
