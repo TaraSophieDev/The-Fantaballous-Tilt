@@ -41,6 +41,7 @@ public class TimeManager : MonoBehaviour {
     timerText = GetComponent<TextMeshProUGUI>();
     pauseMenu = GameObject.FindWithTag("Menu");
     ResetValues();
+    timerText.text = "Time: 00:00.00";
   }
 
   void Update() {
