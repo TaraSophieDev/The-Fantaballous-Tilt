@@ -51,7 +51,7 @@ public class OptionsMenuManager : MonoBehaviour {
         Screen.SetResolution(1920, 1080, Screen.fullScreen);
         break;
       default:
-        Screen.SetResolution(1024, 768, Screen.fullScreen);
+        Screen.SetResolution(640, 480, Screen.fullScreen);
         break;
     }
   }
