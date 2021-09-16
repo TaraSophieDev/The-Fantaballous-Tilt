@@ -15,21 +15,18 @@ public class TimeManager : MonoBehaviour {
   private bool levelFinished = false;
 
   private TextMeshProUGUI timerText;
+  private TimeSpan timespan;
 
   private void RunningTimer() {
     currentTime = Time.timeSinceLevelLoad - startingTime;
+    timespan = TimeSpan.FromSeconds(currentTime);
+    string timePlayingString = "Time: " + timespan.ToString("mm':'ss'.'ff");
+    timerText.text = timePlayingString;
   }
 
   public void StopTimer() {
     print("stop time");
     levelFinished = true;
-  }
-  void Start() {
-    //startingTime = 0.0;
-    // timerOn = true;
-    // currentTime = startingTime;
-    // timerText = GetComponent<TextMeshProUGUI>();
-    // pauseMenu = GameObject.FindWithTag("Menu");
   }
 
   private void ResetValues() {
@@ -61,7 +58,7 @@ public class TimeManager : MonoBehaviour {
       RunningTimer();
     // else if (!timerOn)
       //print("timer off");
-      currentTime = Math.Round(currentTime, 2);
-    timerText.text = "Time: " + Convert.ToString(currentTime);
+    // currentTime = Math.Round(currentTime, 2);
+    // timerText.text = "Time: " + Convert.ToString(currentTime);
   }
 }
