@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PolyMesh:
-    name: PolybrushMesh21476
+    name: PolybrushMesh19700
     vertices:
     - {x: 0.5, y: -0.5, z: 0.5}
     - {x: -0.5, y: -0.5, z: 0.5}
@@ -169,11 +169,11 @@ MonoBehaviour:
     - serializedVersion: 2
       rgba: 4294305837
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4294305836
     - serializedVersion: 2
       rgba: 4294305836
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4294305836
     - serializedVersion: 2
       rgba: 4292581632
     - serializedVersion: 2
@@ -181,11 +181,11 @@ MonoBehaviour:
     - serializedVersion: 2
       rgba: 4294305837
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4294305836
     - serializedVersion: 2
       rgba: 4294305836
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4294305836
     - serializedVersion: 2
       rgba: 4292581632
     - serializedVersion: 2
@@ -197,9 +197,9 @@ MonoBehaviour:
     - serializedVersion: 2
       rgba: 4292581632
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4294305836
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4294305836
     - serializedVersion: 2
       rgba: 4292581632
     - serializedVersion: 2
