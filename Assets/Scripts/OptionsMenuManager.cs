@@ -60,8 +60,8 @@ public class OptionsMenuManager : MonoBehaviour {
     Screen.fullScreen = isFullscreen;
   }
 
-  public void SetVolume(float volume) {
-    audioMixer.SetFloat("Volume", volume);
+  public void SetVolume(float sliderVolume) {
+    audioMixer.SetFloat("Volume", sliderVolume);
   }
 
   void Start() {

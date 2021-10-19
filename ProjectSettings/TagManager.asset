@@ -8,6 +8,7 @@ TagManager:
   - Menu
   - Timer
   - NextLevelPrompt
+  - MusicPlayer
   layers:
   - Default
   - TransparentFX
