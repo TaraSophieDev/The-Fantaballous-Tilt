@@ -27,6 +27,10 @@ public class MainMenuManager : MonoBehaviour {
     Application.Quit();
   }
 
+  public void GoToMainMenu() {
+    SceneManager.LoadScene(1);
+  }
+
   private void Start() {
     //MainMenu.transform.GetComponentInChildren<Button>().gameObject
   }
