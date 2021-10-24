@@ -33,12 +33,4 @@ public class FinishLevel : MonoBehaviour {
     }
   }
 
-  // Start is called before the first frame update
-  void Start() {
-    //timeManager = GameObject.FindWithTag("Timer");
-  }
-
-  // Update is called once per frame
-  void Update() {
-  }
 }
