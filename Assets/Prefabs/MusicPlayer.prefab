@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 5142748411642261680}
   audioClipArray:
-  - {fileID: 8300000, guid: 37272cd4f13970848a3365a84774bce2, type: 3}
-  - {fileID: 8300000, guid: 034dd5c58c1a9f64698de214c694d073, type: 3}
+  - {fileID: 8300000, guid: 267af884af0ed7040aa24bee91131a79, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!82 &5142748411642261680
