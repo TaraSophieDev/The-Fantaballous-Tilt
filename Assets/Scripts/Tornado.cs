@@ -48,8 +48,4 @@ public class Tornado : MonoBehaviour {
     if (objectDistance < pullDistance)
       PullBallToTornado(objectDistance);
   }
-
-  void Update() {
-    
-  }
 }
