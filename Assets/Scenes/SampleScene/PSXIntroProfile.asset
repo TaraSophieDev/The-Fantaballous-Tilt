@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d61509376d05fc438d9ed9281e44e26, type: 3}
   m_Name: CompressionVolume
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   isEnabled:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   weight:
     m_OverrideState: 0
