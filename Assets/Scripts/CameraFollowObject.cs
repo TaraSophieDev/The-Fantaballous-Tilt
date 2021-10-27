@@ -18,7 +18,7 @@ public class CameraFollowObject : MonoBehaviour {
   private RaycastHit hit;
   private MeshRenderer hiddenMR;
 
-  public bool isBallFollowed = false;
+  public bool isBallFollowed = true;
   // Start is called before the first frame update
 
   private void RaycastBall() {
@@ -49,8 +49,6 @@ public class CameraFollowObject : MonoBehaviour {
     else
       isBallFollowed = true;
   }
-  
-
   void HandleInput() {
     if (Gamepad.current != null) {
       if(Gamepad.current.selectButton.wasPressedThisFrame)
@@ -62,8 +60,8 @@ public class CameraFollowObject : MonoBehaviour {
         zoom += 0.01f;
       
     } else {
-      // Select button
-      if (Keyboard.current.altKey.wasPressedThisFrame)
+      //Select button
+      if (Keyboard.current.cKey.wasPressedThisFrame)
         BoolSwitcher();
 
       if (Keyboard.current.upArrowKey.isPressed)
@@ -75,26 +73,27 @@ public class CameraFollowObject : MonoBehaviour {
   void Start() {
     ball = GameObject.FindWithTag("Player");
     
-    BoolSwitcher();
+    //BoolSwitcher();
     offset = transform.position - ball.transform.position;
     offset = transform.position - anchor.transform.position;
   }
 
   // Update is called once per frame
   void FixedUpdate() {
-    HandleInput();
+    
 
     //Limit Zoom
     zoom = Mathf.Clamp(zoom, 0.1f, 1);
 
     // TODO: Lerp this
-    if (!isBallFollowed) 
-      transform.position += ((anchor.transform.position + offset * zoom) - transform.position) * followSpeed;
-    else
+    if (isBallFollowed) 
       transform.position += ((ball.transform.position + offset * zoom) - transform.position) * followSpeed;
+    else
+      transform.position += ((anchor.transform.position + offset * zoom) - transform.position) * followSpeed;
   }
 
   private void Update() {
+    HandleInput();
     RaycastBall();
   }
 
