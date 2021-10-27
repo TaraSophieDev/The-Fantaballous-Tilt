@@ -44,10 +44,12 @@ public class Tornado : MonoBehaviour {
   private void FixedUpdate() {
     direction = transform.position - ball.transform.position;
     objectDistance = Vector3.Distance(transform.position, ball.transform.position);
+    
+    if (objectDistance < pullDistance)
+      PullBallToTornado(objectDistance);
   }
 
   void Update() {
-    if (objectDistance < pullDistance)
-      PullBallToTornado(objectDistance);
+    
   }
 }
