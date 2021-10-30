@@ -47,7 +47,7 @@ MonoBehaviour:
   audioSource: {fileID: 5142748411642261680}
   audioClipArray:
   - {fileID: 8300000, guid: 267af884af0ed7040aa24bee91131a79, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 3ef8bef0b1bd7a34390f559beeed8991, type: 3}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!82 &5142748411642261680
