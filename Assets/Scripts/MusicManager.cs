@@ -23,18 +23,17 @@ public class MusicManager : MonoBehaviour {
     Scene activeScene = SceneManager.GetActiveScene();
     print(activeScene);
     GameObject[] musicObj = GameObject.FindGameObjectsWithTag("MusicPlayer");
-    playSong(0);
-    // switch (SceneManager.GetActiveScene().name) {
-    //   case "Level_1": case "Level_2": case "Level_3": case "Level_4": case "Level_5": case "Level_6":
-    //     playSong(1);
-    //     break;
-    //   case "Level_7": case "Level_8": case "Level_9": case "Level_10": case "Level_11": case "Level_12":
-    //     playSong(2);
-    //     break;
-    //   default:
-    //     playSong(0);
-    //     break;
-    // }
+    switch (SceneManager.GetActiveScene().name) {
+      case "Level_1": case "Level_2": case "Level_3": case "Level_4": case "Level_5": case "Level_6":
+        playSong(0);
+        break;
+      case "Level_7": case "Level_8": case "Level_9": case "Level_10": case "Level_11": case "Level_12":
+        playSong(1);
+        break;
+      default:
+        playSong(0);
+        break;
+    }
 
     // if (SceneManager.GetActiveScene().name == "MainMenu")
     //   if (musicObj.Length > 1){
